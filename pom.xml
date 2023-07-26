@@ -1,0 +1,241 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>expleo</groupId>
+	<artifactId>AccountInformation</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<cucumber.version>6.11.0</cucumber.version>
+		<extentreports.cucumber6.adapter.version>2.13.0</extentreports.cucumber6.adapter.version>
+		<extentreports.version>5.0.9</extentreports.version>
+		<selenium.version>4.3.0</selenium.version>
+		<webdrivermanager.version>5.2.1</webdrivermanager.version>
+		<testng.version>7.4.0</testng.version>
+		<maven.compiler.plugin.version>3.10.1</maven.compiler.plugin.version>
+		<maven.surefire.plugin.version>3.0.0-M7</maven.surefire.plugin.version>
+		<maven.compiler.source.version>11</maven.compiler.source.version>
+		<maven.compiler.target.version>11</maven.compiler.target.version>
+	</properties>
+
+
+	<packaging>jar</packaging>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+
+			<artifactId>selenium-chrome-driver</artifactId>
+
+			<version>3.6.0</version>
+
+		</dependency>
+
+		<dependency>
+
+			<groupId>io.github.bonigarcia</groupId>
+
+			<artifactId>webdrivermanager</artifactId>
+
+			<version>5.3.2</version>
+
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
+
+		<dependency>
+
+			<groupId>io.cucumber</groupId>
+
+			<artifactId>cucumber-testng</artifactId>
+
+			<version>7.1.0</version>
+
+		</dependency>
+
+		<dependency>
+
+			<groupId>org.seleniumhq.selenium</groupId>
+
+			<artifactId>selenium-server</artifactId>
+
+			<version>4.0.0-alpha-1</version>
+
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.jsexecutor/jsexecutor-core -->
+
+		<dependency>
+
+			<groupId>com.jsexecutor</groupId>
+
+			<artifactId>jsexecutor-core</artifactId>
+
+			<version>1.0.5</version>
+
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+
+		<dependency>
+
+			<groupId>org.apache.poi</groupId>
+
+			<artifactId>poi-ooxml</artifactId>
+
+			<version>3.8-beta4</version>
+
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+
+		<dependency>
+
+
+			<groupId>commons-io</groupId>
+
+			<artifactId>commons-io</artifactId>
+
+			<version>2.4</version>
+
+		</dependency>
+
+		<dependency>
+
+			<groupId>io.cucumber</groupId>
+
+			<artifactId>cucumber-java</artifactId>
+
+			<version>6.10.0</version>
+
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+
+		<dependency>
+
+			<groupId>org.testng</groupId>
+
+			<artifactId>testng</artifactId>
+
+			<version>7.4.0</version>
+
+			<scope>test</scope>
+
+		</dependency>
+
+		<dependency>
+			<groupId>tech.grasshopper</groupId>
+			<artifactId>extentreports-cucumber7-adapter</artifactId>
+			<version>1.13.0</version>
+		</dependency>
+
+
+		<!--
+		https://mvnrepository.com/artifact/io.cucumber/cucumber-picocontainer -->
+
+		<dependency>
+
+			<groupId>io.cucumber</groupId>
+
+			<artifactId>cucumber-picocontainer</artifactId>
+
+			<version>7.3.4</version>
+
+			<scope>test</scope>
+
+		</dependency>
+
+		<!--
+		https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+
+		<dependency>
+
+			<groupId>org.seleniumhq.selenium</groupId>
+
+			<artifactId>selenium-api</artifactId>
+
+			<version>3.141.59</version>
+
+		</dependency>
+
+		<dependency>
+			<groupId>expleo</groupId>
+			<artifactId>Cucumber3</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>5.0.9</version>
+		</dependency>
+		<dependency>
+			<groupId>tech.grasshopper</groupId>
+			<artifactId>extentreports-cucumber6-adapter</artifactId>
+			<version>2.13.0</version>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+
+		<pluginManagement>
+
+			<plugins>
+
+				<plugin>
+
+					<groupId>org.apache.maven.plugins</groupId>
+
+					<artifactId>maven-compiler-plugin</artifactId>
+
+					<version>3.11.0</version>
+
+					<configuration>
+
+						<source>1.8</source>
+
+						<target>1.8</target>
+
+					</configuration>
+
+				</plugin>
+
+				<plugin>
+
+					<groupId>org.apache.maven.plugins</groupId>
+
+					<artifactId>maven-jar-plugin</artifactId>
+
+					<version>2.4</version>
+
+				</plugin>
+
+				<plugin>
+
+					<groupId>org.apache.maven.plugins</groupId>
+
+					<artifactId>maven-surefire-plugin</artifactId>
+
+					<version>3.0.0-M6</version>
+
+					<configuration>
+
+						<parallel>methods</parallel>
+
+						<threadCount>3</threadCount>
+
+					</configuration>
+
+				</plugin>
+
+			</plugins>
+
+		</pluginManagement>
+
+	</build>
+</project>
